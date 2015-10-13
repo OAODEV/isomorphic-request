@@ -1,7 +1,7 @@
 {
-  "name": "request",
+  "name": "isomorphic-request",
   "version": "1.0.0",
-  "description": "A tiny HTTP/S client smart enough to work in Node or in the browser.",
+  "description": "A tiny HTTP client capable of working in Node or the browser.",
   "main": "build/index.js",
   "scripts": {
     "prebuild": "rm -rf build && mkdir build",
