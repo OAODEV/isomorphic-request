@@ -1,7 +1,10 @@
 # Request
 
+A tiny HTTP/S client smart enough to work in Node or in the browser.
 
-A tiny HTTP/S client.
+To see request work in the browser, load index.html. RequireJS is configured by `src/browser.js`, which loads `src/index.js`, the main file. The `request` variable is then a global variable you can play with in the browser console, like so: `request.request({ /* AJAX parameters */ })`
+
+To see request execute on the command line, execute `node src/node.js`.  This will log to the command line the output from several examples.
 
 ## :satellite: API
 
@@ -12,6 +15,14 @@ A tiny HTTP/S client.
 **getResponse**  
 
 ## :wrench: Contributing
+
+### Testing
+
+`grunt intern:client` is equivalent to `intern-client config=tests/intern`
+
+`grunt intern:runner` is equivalent to `intern-runner config=tests/intern`
+
+To run the tests on a Selenium server like SauceLabs, set your credentials in a config.json file at the root of the application. See the Intern Grunt tasks to learn more.
 
 ### Style Guide
 
