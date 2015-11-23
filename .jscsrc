@@ -1,0 +1,9 @@
+{
+    # This is not an enforcer, merely a guide for maintainability.
+    "disallowTrailingWhitespace": true,
+    "disallowMultipleVarDecl": false,
+    "maximumLineLength": 80,
+    "preset": "airbnb",
+    "requireCurlyBraces": true,
+    "requireTrailingComma": false
+}
