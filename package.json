@@ -26,6 +26,7 @@
     "intern": "3.0.5",
     "load-grunt-tasks": "3.3.0",
     "mocha": "2.3.3",
-    "time-grunt": "1.2.1"
+    "time-grunt": "1.2.1",
+    "underscore": "1.8.3"
   }
 }

@@ -149,6 +149,42 @@ module.exports = function( grunt ) {
             }
         },
         /**
+         * Replaces the given pattern with the given string.
+         */
+        replace: {
+          // Update app's environment variables.
+          config: {
+            dest: "build/config.js",
+            src: ["config.js"],
+            replacements: [
+              {
+                from: /@API/,
+                to: "<%= config.api %>",
+              },
+              {
+                from: /@APIVERSION/,
+                to: "<%= config.apiversion %>",
+              },
+              {
+                from: /@GAID/,
+                to: "<%= config.gaid %>",
+              },
+              {
+                from: /@HOSTNAME/,
+                to: "<%= config.hostname %>",
+              },
+              {
+                from: /@RAYGUNAPIKEY/,
+                to: "<%= config.Raygun_api_key %>",
+              },
+              {
+                from: /@VERSION/,
+                to: "<%= pkg.version %>",
+              },
+            ],
+          },
+        },
+        /**
          * Enables executing Shell commands using Grunt.
          */
         shell: {
@@ -157,6 +193,12 @@ module.exports = function( grunt ) {
             },
             babel: {
                 command: "babel ./src/index.js -o ./build/index.js"
+            },
+            // Writes the configuration file, config.json.
+            config: {
+                command: function() {
+                    return "node env.js";
+                }
             },
             update: {
                 command: "sudo npm update"
@@ -185,8 +227,11 @@ module.exports = function( grunt ) {
      * Register tasks.
      */
 
+    // Configure the application using environment variables.
+    grunt.registerTask( "config", [ "shell:config", "replace:config" ] );
+
     // Make a build.
-    grunt.registerTask( "make", [ "shell:babel" ] );
+    grunt.registerTask( "make", [ "config", "shell:babel" ] );
 
     // Assert the build meets the acceptance criteria.
     grunt.registerTask( "test", [ "intern:client" ] );

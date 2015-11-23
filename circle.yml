@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   environment:
-    herd_service_name: request
+    herd_service_name: isomorphic-request
     herd_unittest_cmd: npm test
 
     herd_build_tag: $(cat $CIRCLE_PROJECT_REPONAME/Version)_build.$(echo $CIRCLE_SHA1 | cut -c1-7)
