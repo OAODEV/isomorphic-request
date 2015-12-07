@@ -1,0 +1,20 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: isomorphic-request
+  labels:
+    name: isomorphic-request
+spec:
+  replicas: 3
+  selector:
+    name: isomorphic-request
+  template:
+    metadata:
+      labels:
+        name: isomorphic-request
+    spec:
+      containers:
+      - name: isomorphic-request
+        image: r.iadops.com/isomorphic-request:_build.e8d1de5
+        ports:
+        - containerPort: 8080

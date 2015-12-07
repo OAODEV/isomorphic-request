@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: isomorphic-request
+  labels:
+    name: isomorphic-request
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    name: isomorphic-request
