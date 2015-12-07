@@ -49,4 +49,4 @@ ADD Manifest /Manifest
 RUN npm build
 
 # Builds the config file using env. vars and starts the server.
-CMD grunt connect
+CMD grunt shell:config && grunt replace:config && grunt connect

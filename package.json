@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "rm -rf build && mkdir build",
     "build": "grunt make",
+    "pretest": "grunt shell:config && grunt replace:config",
     "test": "grunt intern:client"
   },
   "author": "Luz M. Costa <luz.costa@adops.com> (http://adops.com)",
