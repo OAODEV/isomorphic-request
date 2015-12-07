@@ -15,12 +15,8 @@ RUN sudo apt-get update && apt-get install -y \
   git-core \
 
 # Install node.
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
-RUN apt-get install -y nodejs
-RUN apt-get install -y npm
-
-# Enables `node` to work, addressing how NodeJS is installed on Ubuntu.
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+RUN apt-get install -y nodejs nodejs-legacy nodejs-dev npm
 
 # This copies the project folder (from outside docker) into /app
 # inside the container's filesystem
