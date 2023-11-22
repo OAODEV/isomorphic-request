@@ -18,7 +18,7 @@
     "babel": "5.8.23",
     "chai": "3.3.0",
     "chance": "0.7.7",
-    "grunt": "0.4.5",
+    "grunt": "1.5.3",
     "grunt-bump": "0.6.0",
     "grunt-connect": "0.2.0",
     "grunt-contrib-jshint": "0.11.3",
